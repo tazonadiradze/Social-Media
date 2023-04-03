@@ -1,0 +1,15 @@
+.like-button {
+ background-color: green;
+ color: white;
+ border: none;
+ padding: 10px 20px;
+ cursor: pointer;
+}
+
+.dislike-button {
+ background-color: red;
+ color: white;
+ border: none;
+ padding: 10px 20px;
+ cursor: pointer;
+}

@@ -1,23 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import DATA from '../../user.json';
 import './Users.css'
+import Like from '../Like/Like';
+
 
 
 function Users() {
+ const [id, setId] = useState(1)
+
+ const handleClick = () => {
+  setId(id + 1)
+ }
+
  return (
   <div className="user-container">
    {DATA.map((user) => {
-    return (
-     <div key={user.id} className="user">
-      <img src={user.image} alt={user.id} className="user-image" />
-      <div className="user-info">
-       <p className="user-name">{user.firstName} {user.lastName}</p>
-       <p className="user-email">{user.email}</p>
+    if (user.id === id) {
+     return (
+      <div key={user.id} >
+       {user.firstName}
+       {user.lastName}
+       age: {user.age}
+       eye color : {user.eyeColor}
+       {<img src={user.image} alt={user.id} />}
+       <Like />
+
+       <button onClick={handleClick}>show me next </button>
       </div>
-     </div>
-    );
+     )
+    } else {
+     return
+    }
    })}
-  </div>
+  </div >
  );
 }
 
