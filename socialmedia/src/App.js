@@ -1,9 +1,16 @@
 import React from 'react'
-import Users from './Components/Users/Users'
+import { Routes, Route } from 'react-router-dom'
+import SignIn from './Components/Sign-in/Sign-in'
+import Home from './Components/Routes/Home/Home'
 export default function App() {
   return (
     <div>
-      <Users />
+      <Routes>
+
+        <Route index element={<SignIn />} />
+        <Route path={'/home'} element={<Home />} />
+      </Routes>
+
     </div>
   )
 }
